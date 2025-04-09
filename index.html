@@ -119,10 +119,10 @@
     <hr>
 
     <section>
-      <h2>Feedback Form</h2>
+      <h2>Poll for Character Selection</h2>
       <form>
         <fieldset>
-          <legend>Meeting Feedback</legend>
+          <legend>Character Selection</legend>
           
           <label for="name">Name:</label>
           <input type="text" id="name" name="name"><br><br>
@@ -130,22 +130,20 @@
           <label for="date">Date:</label>
           <input type="date" id="date" name="date"><br><br>
           
-          <label>Meeting Type:</label>
-          <input type="radio" id="type1" name="meeting_type" value="regular">
-          <label for="type1">Regular</label>
-          <input type="radio" id="type2" name="meeting_type" value="special">
-          <label for="type2">Special</label><br><br>
+          <label>Character Type:</label>
+          <input type="radio" id="type1" name="character_type" value="5-star">
+          <label for="type1">5-star</label>
+          <input type="radio" id="type2" name="character_type" value="4-star">
+          <label for="type2">4-star</label><br><br>
           
-          <label>Topics Covered:</label><br>
+          <label>Characters:</label><br>
           <input type="checkbox" id="topic1" name="topics" value="characters">
-          <label for="topic1">New Characters</label><br>
+          <label for="topic1">Castorice</label><br>
           <input type="checkbox" id="topic2" name="topics" value="gameplay">
-          <label for="topic2">Gameplay Updates</label><br>
+          <label for="topic2">Anaxa</label><br>
           <input type="checkbox" id="topic3" name="topics" value="events">
-          <label for="topic3">Events</label><br><br>
-          
-          <label for="feedback">Additional Feedback:</label><br>
-          <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea><br><br>
+          <label for="topic3">Other Characters</label><br>
+          <textarea id="other_characters" name="other_characters" rows="4" cols="50" placeholder="Please enter any other characters you'd like to discuss (e.g., Kafka, Blade, Jing Yuan)"></textarea><br><br>
           
           <label for="rating">Rating:</label>
           <input list="ratings" id="rating" name="rating">
@@ -157,15 +155,18 @@
             <option value="5">
           </datalist><br><br>
           
-          <label for="department">Department:</label>
-          <select id="department" name="department">
-            <option value="design">Design</option>
-            <option value="development">Development</option>
-            <option value="marketing">Marketing</option>
-            <option value="community">Community</option>
+          <label for="element">Element:</label>
+          <select id="element" name="element">
+            <option value="physical">Physical</option>
+            <option value="fire">Fire</option>
+            <option value="ice">Ice</option>
+            <option value="lightning">Lightning</option>
+            <option value="wind">Wind</option>
+            <option value="quantum">Quantum</option>
+            <option value="imaginary">Imaginary</option>
           </select><br><br>
           
-          <button type="submit">Submit Feedback</button>
+          <button type="submit">Submit</button>
         </fieldset>
       </form>
     </section>
