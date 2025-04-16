@@ -1,0 +1,285 @@
+/* === General CSS Topics === */
+
+/* CSS Variables & Fallbacks */
+:root {
+    --theme-main: color(display-p3 0.4 0.3 0.8); /* wider-gamut */
+    --theme-fallback: #6a5acd; /* fallback to slate blue */
+    --accent: color-mix(in srgb, purple 60%, white 40%);
+    --bg-glow: hsla(240, 100%, 10%, 0.95);
+  }
+  
+  /* Base styles */
+  body {
+    background-color: var(--theme-main, var(--theme-fallback));
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(to bottom right, var(--bg-glow), black);
+    padding: 2rem;
+  }
+  
+  /* Header */
+  header {
+    background-color: rgba(255, 255, 255, 0.05);
+    margin-bottom: 2rem;
+    border: 2px solid var(--accent);
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+  
+  header h1 {
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+  }
+  header h2 {
+    color: hsl(270, 100%, 80%);
+  }
+  header h3 {
+    color: orange;
+  }
+  
+  /* Navigation */
+  nav {
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.4);
+  }
+
+  nav a {
+    color: white; /* better contrast */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: var(--accent);
+    text-shadow: 0 0 6px var(--accent);
+  }
+  
+  nav a:active {
+    transform: scale(0.95);
+    color: hsl(270, 100%, 70%);
+  }
+  
+  /* Main container */
+  main {
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 20px;
+    border-style: dashed;
+    border-color: #FFF;
+    border-width: 2px;
+    border-radius: 15px;
+    max-width: 900px;
+  }
+  
+  /* Typography */
+  h2, h3 {
+    text-align: left;
+    text-decoration: underline;
+    color: var(--accent);
+  }
+
+  h3 {
+    letter-spacing: 1pt; /* subtle spacing between letters */
+  }
+  
+  p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+  }
+  
+  ul, ol {
+    margin-left: 2em; /* relative unit */
+    font-size: 1.05rem;
+  }
+  
+  /* Form */
+  form {
+    display: block;
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    border: 0.05in solid rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Inputs */
+  input[type="text"], input[type="date"], textarea, select {
+    display: inline-block;
+    width: 80%;
+    margin-bottom: 1rem;
+    padding: 10px;
+    background-color: #111;
+    color: white;
+    border: 1px solid #999;
+    border-radius: 5px;
+  }
+  
+  /* Buttons */
+  button {
+    background-color: var(--accent);
+    color: black;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: white;
+  }
+  button:active {
+    transform: scale(0.97);
+  }
+  
+  /* Images & Media */
+  img {
+    max-width: 100%;
+    height: auto;
+    border: 3px solid white;
+    border-radius: 10px;
+  }
+  
+  audio, video {
+    display: inline-block;
+    margin-top: 1em;
+    width: 90%;
+  }
+  
+  /* Display variations */
+  section {
+    display: block; /* required */
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  details {
+    display: inline-block;
+  }
+  
+  footer {
+    text-align: center;
+    margin-top: 2cm;
+    font-size: 0.9rem;
+  }
+
+  /* Layout: Flex */
+  nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  /* Layout: Grid */
+  #new {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  /* Media Query for responsiveness */
+  @media screen and (max-width: 768px) {
+    body {
+      padding: 1rem;
+    }
+  
+    nav {
+      flex-direction: column;
+    }
+  
+    form {
+      width: 100%;
+    }
+  
+    video, audio {
+      width: 100%;
+    }
+  }
+  
+  /* Positioning examples */
+  #agenda {
+    position: relative;
+  }
+  
+  #unfinished {
+    position: sticky;
+    top: 0;
+    background-color: #111;
+  }
+  
+  /* Pseudo-classes */
+  a:hover {
+    color: var(--accent);
+  }
+  button:active {
+    background-color: hsl(0, 0%, 90%);
+  }
+  
+  /* Class Selector */
+  .prepared-by {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  /* Universal Selector */
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Child Combinator (>) */
+  section > h3 {
+    margin-top: 1.5rem;
+    color: #ffb6c1;
+  }
+
+  /* General Sibling Combinator (~) */
+  h3 ~ p {
+    padding-left: 1rem;
+    border-left: 3px solid var(--accent);
+  }
+
+  /* Adjacent Sibling Combinator (+) */
+  h2 + p {
+    font-size: 1.2rem;
+    color: #ffd700;
+  }
+
+  /* Combining Two Selectors (element.class) */
+  span.prepared-by {
+    display: block;
+    margin-top: 1rem;
+  }
+
+  /* New :has() Selector */
+  section:has(h3) {
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+  }
+
+  /* Nested Selectors */
+  form {
+    & fieldset {
+      background-color: rgba(0, 0, 0, 0.2);
+      
+      & legend {
+        padding: 0 1rem;
+        color: var(--accent);
+      }
+      
+      & label {
+        color: white;
+      }
+    }
+  }
+  
