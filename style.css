@@ -26,17 +26,19 @@
     border: 2px solid var(--accent);
     border-radius: 1rem;
     padding: 1rem;
-  }
-  
-  header h1 {
-    color: rgb(255, 255, 255);
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-  }
-  header h2 {
-    color: hsl(270, 100%, 80%);
-  }
-  header h3 {
-    color: orange;
+
+    & h1 {
+        color: rgb(255, 255, 255);
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    & h2 {
+        color: hsl(270, 100%, 80%);
+    }
+
+    & h3 {
+        color: orange;
+    }
   }
   
   /* Navigation */
@@ -50,24 +52,24 @@
     flex-wrap: wrap;
     gap: 1rem;
     box-shadow: 0 0 10px rgba(138, 43, 226, 0.4);
-  }
 
-  nav a {
-    color: white; /* better contrast */
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-  }
-  
-  nav a:hover {
-    color: var(--accent);
-    text-shadow: 0 0 6px var(--accent);
-  }
-  
-  nav a:active {
-    transform: scale(0.95);
-    color: hsl(270, 100%, 70%);
+    & a {
+        color: white; /* better contrast */
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: color 0.3s ease, text-shadow 0.3s ease;
+
+        &:hover {
+            color: var(--accent);
+            text-shadow: 0 0 6px var(--accent);
+        }
+
+        &:active {
+            transform: scale(0.95);
+            color: hsl(270, 100%, 70%);
+        }
+    }
   }
   
   /* Main container */
@@ -112,6 +114,20 @@
     background-color: rgba(255, 255, 255, 0.07);
     border-radius: 12px;
     border: 0.05in solid rgba(255, 255, 255, 0.2);
+
+    & fieldset {
+        background-color: rgba(0, 0, 0, 0.2);
+        color: white;
+    }
+
+    & legend {
+        padding: 0 1rem;
+        color: var(--accent);
+    }
+
+    & label {
+        color: white;
+    }
   }
   
   /* Inputs */
@@ -135,12 +151,14 @@
     border-radius: 10px;
     border: none;
     cursor: pointer;
-  }
-  button:hover {
-    background-color: white;
-  }
-  button:active {
-    transform: scale(0.97);
+
+    &:hover {
+        background-color: white;
+    }
+
+    &:active {
+        transform: scale(0.97);
+    }
   }
   
   /* Images & Media */
@@ -197,6 +215,11 @@
   
     nav {
       flex-direction: column;
+
+      & a {
+        width: 100%;
+        text-align: center;
+      }
     }
   
     form {
@@ -267,21 +290,6 @@
     padding: 1.5rem;
     background-color: rgba(255, 255, 255, 0.03);
     border-radius: 8px;
-  }
-
-  /* Nested Selectors */
-  form {
-    fieldset {
-      color: white;
-    }
-  
-    legend {
-      color: var(--accent);
-    }
-  
-    label {
-      color: white;
-    }
   }
   
   
