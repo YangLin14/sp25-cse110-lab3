@@ -271,19 +271,19 @@
 
   /* Nested Selectors */
   form {
-    & fieldset {
-      background-color: rgba(0, 0, 0, 0.2);
-      
-      & legend {
-        padding: 0 1rem;
-        color: var(--accent);
-      }
-      
-      & label {
-        color: white;
-      }
+    fieldset {
+      color: white;
+    }
+  
+    legend {
+      color: var(--accent);
+    }
+  
+    label {
+      color: white;
     }
   }
+  
   
   /* Animation for section highlight */
   @keyframes highlightSection {
